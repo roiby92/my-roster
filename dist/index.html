@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Peta&display=swap" rel="stylesheet">
+    <title>My Roster</title>
+</head>
+
+<body>
+    <div id='nav'>
+        <input id="input" type="text" placeholder="write the name of the team">
+        <button id="submit">Search</button>
+    </div>
+    <div id="results">
+
+    </div>
+    <script id='player-template' type="text/x-handlebars-template">
+        {{#each data}}
+        <div class="player">
+            <p>{{firstName}} {{lastName}}</p>
+            <p>{{jerseyNum}}</p>
+            <img src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}"
+            onerror="this.src ='https://cdn1.iconfinder.com/data/icons/basketball-42/64/basketball_player-athlete-avatar-man-512.png' ">
+            <p>position: {{position}}</p>
+        </div>
+        {{/each}}
+    </script>
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+body{
+    background-color: whitesmoke;
+}
+#nav{
+    display: grid;
+    grid-template-columns: 9fr 2fr;
+    grid-template-areas: "i b";
+    font-family: 'Lexend Peta', sans-serif;
+}
+
+#input{
+    grid-area: i;
+    display: inline;
+    height: 40px;
+    font-family: 'Lexend Peta', sans-serif;
+}
+
+#submit{
+    grid-area: b;
+    display: inline;
+    font-family: 'Lexend Peta', sans-serif;
+}
+
+#results{
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+.player{
+    height: 400px;
+    border-radius: 7px;
+    background-color: orange;
+    display: grid;
+    grid-template-rows: 0.5fr 0.5fr 5fr 0.3fr ;
+    box-shadow: white;
+}
+
+img{
+    height: 250px;
+    width: 350px;
+    justify-self: center;
+    background-color: grey;
+    border-radius: 7px;
+    align-self: center;
+}
+p{
+    justify-self: center;
+    font-family: 'Lexend Peta', sans-serif;
+}
