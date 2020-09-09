@@ -12,24 +12,30 @@
 <body>
     <div id='nav'>
         <input id="input" type="text" placeholder="write the name of the team">
-        <button id="submit">Search</button>
+        <button id="submit">Get Roster</button>
+        <button id="dream">Dream Team</button>
     </div>
     <div id="results">
 
     </div>
     <script id='player-template' type="text/x-handlebars-template">
         {{#each data}}
-        <div class="player">
+        <div class="player" data-id ='{{id}}'>
             <p>{{firstName}} {{lastName}}</p>
-            <p>{{jerseyNum}}</p>
-            <img src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}"
-            onerror="this.src ='https://cdn1.iconfinder.com/data/icons/basketball-42/64/basketball_player-athlete-avatar-man-512.png' ">
-            <p>position: {{position}}</p>
+                <p>{{jerseyNum}}</p>
+            <img src={{img}} onerror="this.src ='https://cdn1.iconfinder.com/data/icons/basketball-42/64/basketball_player-athlete-avatar-man-512.png' ">
+            <p>position: {{position}}
+                <button id="add">Add</button>
+                <button id="remove">Remove</button>
+            </p>
+           
         </div>
         {{/each}}
     </script>
     <script src="/handlebars/dist/handlebars.js"></script>
     <script src="./jquery/dist/jquery.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="Fetch.js"></script>
     <script src="main.js"></script>
 </body>
 

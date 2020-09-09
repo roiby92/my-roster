@@ -1,16 +1,23 @@
-const addPlayer = function (data) {
-    console.log(data);
-    const source = $("#player-template").html()
-    const template = Handlebars.compile(source)
-    const newHTML = template({ data })
-    $('#results').append(newHTML)
-}
+
+const fetchs = new Fetch()
 
 $('#submit').on('click', function () {
-    const input = $('#input').val()
-    $.ajax({
-        method: 'GET',
-        url: `/teams/${input}`,
-        success: addPlayer
-    })
+    $('#results').empty()
+    const input = $('#input').val().toLocaleLowerCase()
+    fetchs.getTeam(input)
+})
+
+$('#dream').on('click', function () {
+    $('#results').empty()
+    fetchs.getDreamTeam()
+})
+
+$('#results').on('click', '#add', function () {
+    const playerId = $(this).closest('.player').data().id
+    fetchs.addToDreamTeam(playerId)
+})
+
+$('#results').on('click', '#remove', function () {
+    const playerId = $(this).closest('.player').data().id
+    fetchs.deleteFromDreamTeam(playerId)
 })
